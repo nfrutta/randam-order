@@ -1,22 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:random_order/pages/order_page.dart';
 
-class TopPage extends StatefulWidget {
-  const TopPage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<TopPage> createState() => _TopPageState();
-}
-
-class _TopPageState extends State<TopPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class TopPage extends StatelessWidget {
+  const TopPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +12,14 @@ class _TopPageState extends State<TopPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Text(
-                'You have pushed the button this many times:',
-              ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headline4,
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const OrderPage()),
+                  );
+                },
+                child: const Text('ランダムで打順を決める'),
               ),
             ],
           ),

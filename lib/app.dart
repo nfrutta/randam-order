@@ -10,9 +10,9 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.blue,
       ),
-      home: const TopPage(title: 'Flutter Demo Home Page'),
+      home: const TopPage(),
     );
   }
 }
